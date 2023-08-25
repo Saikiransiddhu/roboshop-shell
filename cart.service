@@ -2,8 +2,8 @@
 Description = Cart Service
 [Service]
 User=roboshop
-Environment=REDIS_HOST=redis.saikirandevops.cloud
-Environment=CATALOGUE_HOST=catalogue.saikirandevops.cloud
+Environment=REDIS_HOST=54.80.24.214
+Environment=CATALOGUE_HOST=54.144.110.87
 Environment=CATALOGUE_PORT=8080
 ExecStart=/bin/node /app/server.js
 SyslogIdentifier=cart
