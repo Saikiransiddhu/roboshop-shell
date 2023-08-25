@@ -37,7 +37,7 @@ useradd roboshop &>> $LOGFILE
 
 mkdir /app &>> $LOGFILE
 
-curl -o /tmp/catalogue.zip https://roboshop-builds.s3.amazonaws.com/catalogue.zip &>> $LOGFILE
+curl -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue.zip &>> $LOGFILE
 
 cd /app &>> $LOGFILE
 
@@ -47,16 +47,16 @@ cd /app &>> $LOGFILE
 
 npm install &>> $LOGFILE
 
-cp home/centos/roboshop-shell/catalogue.service /etc/systemd/system/catalogue.service
+cp home/centos/roboshop-shell/catalogue.service /etc/systemd/system/catalogue.service &>> $LOGFILE
 
-systemctl daemon-reload
+systemctl daemon-reload &>> $LOGFILE
 
-systemctl enable catalogue
+systemctl enable catalogue &>> $LOGFILE
 
-systemctl start catalogue
+systemctl start catalogue &>> $LOGFILE
 
-cp home/centos/roboshop-shell/mongo.repo /etc/yum.repos.d/mongo.repo
+cp home/centos/roboshop-shell/mongo.repo /etc/yum.repos.d/mongo.repo &>> $LOGFILE
 
-yum install mongodb-org-shell -y
+yum install mongodb-org-shell -y &>> $LOGFILE
 
-mongo --host mongodb.saikirandevops.cloud </app/schema/catalogue.js
+mongo --host mongodb.saikirandevops.cloud </app/schema/catalogue.js&>> $LOGFILE
