@@ -52,4 +52,4 @@ systemctl restart mongod &>> $LOGFILE
 
 VALIDATE $? "Restarting MonogoDB"
 
-#mongo 
+#mongodb
